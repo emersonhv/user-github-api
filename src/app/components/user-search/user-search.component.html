@@ -1,0 +1,60 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input
+        class="input"
+        type="text"
+        formControlName="username"
+        placeholder="Ingresa un nombre de usuario"
+        [ngClass]="{
+          'is-d anger':
+            searchForm.get('username')?.invalid &&
+            searchForm.get('username')?.touched
+        }"
+      />
+      <span class="icon is-small is-left">
+        <i class="fa-solid fa-at"></i>
+      </span>
+    </p>
+
+    <div
+      *ngIf="
+        searchForm.get('username')?.invalid &&
+        searchForm.get('username')?.touched
+      "
+    >
+      <p
+        class="help is-danger"
+        *ngIf="searchForm.get('username')?.errors?.['required']"
+      >
+        El campo es obligatorio.
+      </p>
+      <p
+        class="help is-danger"
+        *ngIf="searchForm.get('username')?.errors?.['minlength']"
+      >
+        El nombre de usuario debe tener al menos 4 caracteres.
+      </p>
+      <p
+        class="help is-danger"
+        *ngIf="searchForm.get('username')?.errors?.['forbiddenName']"
+      >
+        No se permite buscar este nombre de usuario.
+      </p>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button
+        class="button is-primary is-fullwidth"
+        type="submit"
+        [disabled]="searchForm.invalid"
+      >
+        <span class="icon is-small is-left">
+          <i class="fa-solid fa-search"></i>
+        </span>
+        <span>Buscar</span>
+      </button>
+    </div>
+  </div>
+</form>

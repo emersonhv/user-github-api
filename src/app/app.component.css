@@ -1,0 +1,23 @@
+.full-height {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.container.is-fluid {
+  width: 80%; 
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%; 
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.columns {
+  margin: 0;
+}

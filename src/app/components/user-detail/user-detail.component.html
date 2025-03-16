@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="title ">Detalle del usuario</h2>
+  <div *ngIf="isLoading; else content">
+    <p>Cargando...</p>
+  </div>
+  <ng-template #content>
+    <div *ngIf="user; else errorMessage">
+      <div class="user-detail">
+        <img [src]="user.avatar_url" alt="Avatar" class="avatar" />
+        <div class="user-info max-w-screen-sm">
+          <p><strong>ID:</strong> {{ user.id }}</p>
+          <p><strong>Nombre:</strong> {{ user.name }}</p>
+          <p><strong>Nombre de usuario:</strong> {{ user.login }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>URL del perfil:</strong> <a [href]="user.html_url" target="_blank">{{ user.html_url }}</a></p>
+          <p><strong>Seguidores:</strong> {{ user.followers }}</p>
+          <p><strong>Siguiento:</strong> {{ user.following }}</p>
+          <p><strong>Biografía:</strong> {{ user.bio }}</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #errorMessage>
+      <p class="error">{{ error }}</p>
+    </ng-template>
+  </ng-template>
+</div>
