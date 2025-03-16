@@ -1,27 +1,43 @@
-# GithubUsersApp
+# Aplicación de Búsqueda de Usuarios de GitHub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.15.
+Esta es una aplicación Angular que permite buscar usuarios de GitHub, ver sus perfiles y mostrar un gráfico de barras con el número de seguidores de los primeros 10 usuarios encontrados. La aplicación utiliza la API pública de GitHub y sigue principios de diseño SOLID, patrones de diseño y clean code.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Búsqueda de usuarios**: Ingresa un nombre de usuario y obtén una lista de los primeros 10 usuarios que coincidan con la búsqueda.
+- **Detalles del usuario**: Haz clic en un usuario para ver su perfil, incluyendo su imagen, nombre de usuario, ID y enlace a su perfil de GitHub.
+- **Gráfico de seguidores**: Visualiza el número de seguidores de los primeros 10 usuarios en un gráfico de barras.
+- **Validación de score**: No se permite acceder a perfiles de usuarios con un `score` menor a 30.0.
 
-## Code scaffolding
+## Tecnologías utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 18**: Framework para construir la aplicación.
+- **Bulma**: Framework CSS para el diseño de la interfaz.
+- **Chart.js**: Librería para crear gráficos.
+- **Axios**: Librería para realizar solicitudes HTTP.
+- **GitHub API**: API pública de GitHub para obtener datos de usuarios.
 
-## Build
+## Configuración del proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Requisitos previos
 
-## Running unit tests
+- Node.js (v18 o superior)
+- Angular CLI (v18 o superior)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Instalación
 
-## Running end-to-end tests
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Instalar dependencias
+    ```bash
+    npm install
 
-## Further help
+3. Instalar Angular CLI
+    ```bash
+    npm install -g @angular/cli@18
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. Ejecutar servidor de pueba
+    ```bash
+    ng serve
