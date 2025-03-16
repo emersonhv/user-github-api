@@ -1,17 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { scoreGuard } from './score.guard';
+import { ScoreGuard } from '@app/guards/score.guard';
 
-describe('scoreGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => scoreGuard(...guardParameters));
+describe('ScoreGuard', () => {
+  let guard: ScoreGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
+    guard = TestBed.inject(ScoreGuard);
   });
 
   it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
+    expect(guard).toBeTruthy();
   });
 });
