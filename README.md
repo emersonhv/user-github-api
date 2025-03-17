@@ -28,7 +28,7 @@ Esta es una aplicación Angular que permite buscar usuarios de GitHub, ver sus p
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/emersonhv/user-github-api.git
 
 2. Instalar dependencias
     ```bash
